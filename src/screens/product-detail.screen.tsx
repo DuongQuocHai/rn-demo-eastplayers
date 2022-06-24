@@ -144,6 +144,7 @@ const styles = StyleSheet.create({
   flexRow: {flexDirection: 'row', alignItems: 'flex-end'},
   container: {
     flex: 1,
+    backgroundColor: COLORS.WHITE,
   },
   btnBack: {
     position: 'absolute',

@@ -18,8 +18,7 @@ const FooterButton = ({
   onPress,
 }: FooterButtonProps) => {
   return (
-    <View
-      style={styles.container}>
+    <View style={styles.container}>
       <RowCenter style={styles.wrapperButton}>
         <FollowButton
           isFollowed={isFollowed}
@@ -41,17 +40,10 @@ export default FooterButton;
 
 const styles = StyleSheet.create({
   flex1: {flex: 1},
-  container:{
+  container: {
     backgroundColor: COLORS.WHITE,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: -2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 3,
+    borderTopWidth: 1,
+    borderColor: COLORS.GRAY_8,
   },
   wrapperButton: {
     paddingHorizontal: 16,
