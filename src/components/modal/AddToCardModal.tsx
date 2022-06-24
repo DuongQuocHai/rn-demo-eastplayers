@@ -3,13 +3,12 @@ import {View, StyleSheet, SafeAreaView, TouchableOpacity} from 'react-native';
 import Modal from 'react-native-modal';
 import {COLORS} from '../../theme/colors';
 import RowCenter from '../common/RowCenter';
-import {body5, bold3, medium5, Text} from '../common/Text';
+import {medium5, semiBold3, Text} from '../common/Text';
 import FooterButton from '../product-detail/FooterButton';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import SizeBox from '../common/SizeBox';
 import SelectItem from '../common/SelectItem';
 import useMergeState from '../../hooks/useMergeState';
-import {IProductDetail} from '../../data/ProductDetail';
 import {
   LIST_COLORS,
   IColorProduct,
@@ -142,7 +141,7 @@ const AddToCardModal = (
       onBackdropPress={closeModal}>
       <View style={styles.container}>
         <RowCenter style={styles.wrapperTitle}>
-          <Text type={bold3}>Chọn phân loại</Text>
+          <Text type={semiBold3}>Chọn phân loại</Text>
           <SizeBox style={styles.flex1} />
           <TouchableOpacity style={styles.btnClose} onPress={closeModal}>
             <Ionicons name="close" size={16} color />
