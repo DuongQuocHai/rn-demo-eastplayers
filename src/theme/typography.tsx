@@ -2,7 +2,7 @@ import {StyleProp, TextStyle} from 'react-native';
 import {COLORS} from './colors';
 
 export const regular = 'Inter-Regular';
-export const bold = 'Inter-Bold';
+// export const bold = 'Inter-Bold';
 export const medium = 'Inter-Medium';
 export const semiBold = 'Inter-SemiBold';
  const textColor = COLORS.TEXT_DARK;
@@ -41,7 +41,8 @@ const typography: ITypography = {
   },
   boldNormal: {
     ...textNormal,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   mediumNormal: {
     ...textNormal,
@@ -58,7 +59,8 @@ const typography: ITypography = {
   },
   bold1: {
     ...text1,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   medium1: {
     ...text1,
@@ -75,7 +77,8 @@ const typography: ITypography = {
   },
   bold2: {
     ...text2,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   medium2: {
     ...text2,
@@ -92,7 +95,8 @@ const typography: ITypography = {
   },
   bold3: {
     ...text3,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   medium3: {
     ...text3,
@@ -109,7 +113,8 @@ const typography: ITypography = {
   },
   bold4: {
     ...text4,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   medium4: {
     ...text4,
@@ -126,7 +131,8 @@ const typography: ITypography = {
   },
   bold5: {
     ...text5,
-    fontFamily: bold,
+    fontFamily: regular,
+    fontWeight: '600',
   },
   medium5: {
     ...text5,

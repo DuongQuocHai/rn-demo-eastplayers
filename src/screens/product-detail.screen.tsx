@@ -92,7 +92,7 @@ const ProductDetailScreen = () => {
             </Text>
             <SizeBox width={6} />
             <Text type={body5} style={styles.txtRootPrice}>
-              {numberWithDot(rootPrice)}
+              {numberWithDot(rootPrice)}{UNIT}
             </Text>
           </RowCenter>
           <SizeBox height={12} />
