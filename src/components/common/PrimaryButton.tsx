@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet,Image} from 'react-native';
-import { IMAGES } from '../assets/images';
-import { COLORS } from '../theme/colors';
+import { IMAGES } from '../../assets/images';
+import { COLORS } from '../../theme/colors';
 import {Text} from './Text';
 
 interface PrimaryButtonProps {

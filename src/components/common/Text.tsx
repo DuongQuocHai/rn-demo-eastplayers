@@ -7,8 +7,9 @@ import {
   TextProps,
   TextStyle,
 } from 'react-native';
-import typography from '../theme/typography';
+import typography from '../../theme/typography';
 export const headline4 = 'headline4';
+export const headline5 = 'headline5';
 export const headlineNormal = 'headlineNormal';
 export const body4 = 'body4';
 export const body5 = 'body5';

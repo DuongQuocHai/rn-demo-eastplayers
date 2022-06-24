@@ -20,6 +20,11 @@ const typography: ITypography = {
     fontSize: 16,
     color: textColor,
   },
+  headline5: {
+    fontFamily: fontFamilyBold,
+    fontSize: 12,
+    color: textColor,
+  },
   normal: {
     fontFamily:fontFamilyRegular,
     fontSize: 14,
