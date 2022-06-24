@@ -1,23 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   Image,
   ScrollView,
   StyleSheet,
   TouchableOpacity,
   View,
+  SafeAreaView,
 } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {IMAGES} from '../assets/images';
 import RowCenter from '../components/common/RowCenter';
 import SizeBox from '../components/common/SizeBox';
-import {body4, body5, normal, Text} from '../components/common/Text';
-import AddProductModal from '../components/modal/AddProductModal';
+import {
+  body4,
+  body5,
+  medium4,
+  normal,
+  semiBold3,
+  semiBold4,
+  semiBold5,
+  Text,
+} from '../components/common/Text';
+import AddToCardModalProps from '../components/modal/AddToCardModal';
 import BackButton from '../components/product-detail/BackButton';
 import FollowButton from '../components/product-detail/FollowButton';
 import FooterButton from '../components/product-detail/FooterButton';
 import ImageView from '../components/product-detail/ImageView';
 import Stars from '../components/product-detail/Stars';
-import {ProductDetail} from '../data/ProductDetail';
+import {PRODUCT_DETAIL} from '../data/ProductDetail';
 import {numberWithDot} from '../helpers/format.helper';
 import {COLORS} from '../theme/colors';
 
@@ -25,7 +35,7 @@ const UNIT = 'đ';
 const TagDiscount = ({percent}: {percent: number}) => {
   return (
     <View style={styles.wrapperTagDiscount}>
-      <Text type={body5} style={styles.txtDiscount}>
+      <Text type={semiBold5} style={styles.txtDiscount}>
         {percent}%
       </Text>
     </View>
@@ -37,7 +47,7 @@ const ButtonInfo = () => {
     <TouchableOpacity style={styles.btnInfo}>
       <Image source={IMAGES.IC_INFO_PRODUCT} style={{width: 24, height: 24}} />
       <SizeBox width={14} />
-      <Text type={normal} style={styles.txtInfo}>
+      <Text type={medium4} style={styles.txtInfo}>
         Màu, kích thước
       </Text>
       <Entypo name="chevron-right" size={20} color={COLORS.GRAY_5} />
@@ -55,10 +65,17 @@ const ProductDetailScreen = () => {
     star,
     countRate,
     countSold,
-  } = ProductDetail;
-  const [isFollowed, setIsFollowed] = useState(ProductDetail.isFollowed);
+    colors,
+    sizes,
+  } = PRODUCT_DETAIL;
+
+  const modalRef = useRef();
+  const [isFollowed, setIsFollowed] = useState(PRODUCT_DETAIL.isFollowed);
   const toggleFollowed = () => {
     setIsFollowed(!isFollowed);
+  };
+  const openModalAddToCard = () => {
+      modalRef.current?.openModal();
   };
   return (
     <View style={styles.container}>
@@ -69,7 +86,7 @@ const ProductDetailScreen = () => {
           <RowCenter style={styles.flexRow}>
             <TagDiscount percent={percentDiscount} />
             <SizeBox width={12} />
-            <Text type={body4} style={styles.txtPrice}>
+            <Text type={semiBold3}>
               {numberWithDot(price)}
               {UNIT}
             </Text>
@@ -79,7 +96,9 @@ const ProductDetailScreen = () => {
             </Text>
           </RowCenter>
           <SizeBox height={12} />
-          <Text type={body4}>{name}</Text>
+          <Text type={body4} style={styles.txtName}>
+            {name}
+          </Text>
           <SizeBox height={8} />
           <RowCenter>
             <Stars contStar={star} length={5} />
@@ -103,9 +122,16 @@ const ProductDetailScreen = () => {
       <FooterButton
         isFollowed={isFollowed}
         onToggleFollow={toggleFollowed}
-        onPress={() => {}}
+        onPress={openModalAddToCard}
       />
-      <AddProductModal />
+      <AddToCardModalProps
+        colors={colors}
+        sizes={sizes}
+        isFollowed={isFollowed}
+        onToggleFollow={toggleFollowed}
+        ref={modalRef}
+      />
+      <SafeAreaView />
     </View>
   );
 };
@@ -136,9 +162,9 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 8,
     borderTopLeftRadius: 8,
   },
-  txtDiscount: {fontFamily: 'Inter-SemiBold', color: COLORS.WHITE},
-  txtPrice: {fontFamily: 'Inter-SemiBold'},
+  txtDiscount: {color: COLORS.WHITE},
   txtRootPrice: {color: COLORS.GRAY_5, textDecorationLine: 'line-through'},
+  txtName: {lineHeight: 22},
   wrapperButtonInfo: {
     paddingHorizontal: 16,
     paddingVertical: 12,
@@ -153,7 +179,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   txtInfo: {
-    fontFamily: 'Inter-Medium',
     flex: 1,
   },
 });

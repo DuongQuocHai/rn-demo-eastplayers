@@ -3,7 +3,7 @@ export interface IColorProduct {
   name?: string;
 }
 
-export const ColorProductDefault: Array<IColorProduct> = [
+export const LIST_COLORS: Array<IColorProduct> = [
   {id: 1, name: 'Đen'},
   {id: 2, name: 'Trắng'},
   {id: 3, name: 'Xanh'},
@@ -14,7 +14,7 @@ export interface ISizeProduct {
   name?: string;
 }
 
-export const SizeProductDefault: Array<ISizeProduct> = [
+export const LIST_SIZES: Array<ISizeProduct> = [
   {id: 1, name: 'S'},
   {id: 2, name: 'M'},
   {id: 3, name: 'L'},

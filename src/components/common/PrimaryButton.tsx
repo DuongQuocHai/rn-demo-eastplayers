@@ -1,14 +1,14 @@
 import * as React from 'react';
 import {
-  StyleSheet,
   Image,
   StyleProp,
-  ViewStyle,
+  StyleSheet,
   TouchableOpacity,
+  ViewStyle,
 } from 'react-native';
 import {IMAGES} from '../../assets/images';
 import {COLORS} from '../../theme/colors';
-import {Text} from './Text';
+import {boldNormal, Text} from './Text';
 
 interface PrimaryButtonProps {
   title: string;
@@ -23,7 +23,7 @@ const PrimaryButton = ({title, style, onPress}: PrimaryButtonProps) => {
         source={IMAGES.IC_BUTTON_LEFT}
         style={[styles.icButton, {left: 0}]}
       />
-      <Text type="headlineNormal" style={styles.title}>
+      <Text type={boldNormal} style={styles.title}>
         {title.toLocaleUpperCase()}
       </Text>
       <Image
@@ -48,5 +48,11 @@ const styles = StyleSheet.create({
   title: {
     color: COLORS.WHITE,
   },
-  icButton: {position: 'absolute', top: 0, bottom: 0, zIndex: -1},
+  icButton: {
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    zIndex: -1,
+    tintColor: COLORS.GRAY_2,
+  },
 });

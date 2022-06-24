@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {View, StyleSheet, StyleProp, ViewStyle} from 'react-native';
 import {COLORS} from '../../theme/colors';
-import {body5, headline5, Text} from '../common/Text';
+import {medium5, Text} from '../common/Text';
 
 interface PaginationProps {
   length: number;
@@ -13,7 +13,7 @@ const Pagination = ({length, currentIndex, style}: PaginationProps) => {
   return (
     <View style={[styles.container, style]}>
       <Text
-        type={body5}
+        type={medium5}
         style={styles.text}>{`${currentIndex}/${length}`}</Text>
     </View>
   );
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontFamily: 'Inter-Medium',
     color: COLORS.WHITE,
   },
 });

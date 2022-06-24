@@ -1,44 +1,140 @@
 import {StyleProp, TextStyle} from 'react-native';
 import {COLORS} from './colors';
 
-const fontFamilyRegular = 'Inter-Regular';
-const fontFamilyBold = 'Inter-Bold';
-const textColor = COLORS.TEXT_DARK;
+export const regular = 'Inter-Regular';
+export const bold = 'Inter-Bold';
+export const medium = 'Inter-Medium';
+export const semiBold = 'Inter-SemiBold';
+ const textColor = COLORS.TEXT_DARK;
 
 type ITypography = {
   [key: string]: StyleProp<TextStyle>;
 };
-
+const textNormal = {
+  fontSize: 14,
+  color: textColor,
+};
+const text1 = {
+  fontSize: 24,
+  color: textColor,
+};
+const text2 = {
+  fontSize: 20,
+  color: textColor,
+};
+const text3 = {
+  fontSize: 16,
+  color: textColor,
+};
+const text4 = {
+  fontSize: 14,
+  color: textColor,
+};
+const text5 = {
+  fontSize: 12,
+  color: textColor,
+};
 const typography: ITypography = {
-  headlineNormal: {
-    fontFamily: fontFamilyBold,
-    fontSize: 14,
-    color: textColor,
-  },
-  headline4: {
-    fontFamily: fontFamilyBold,
-    fontSize: 16,
-    color: textColor,
-  },
-  headline5: {
-    fontFamily: fontFamilyBold,
-    fontSize: 12,
-    color: textColor,
-  },
   normal: {
-    fontFamily:fontFamilyRegular,
-    fontSize: 14,
-    color: textColor,
+    ...textNormal,
+    fontFamily: regular,
   },
+  boldNormal: {
+    ...textNormal,
+    fontFamily: bold,
+  },
+  mediumNormal: {
+    ...textNormal,
+    fontFamily: medium,
+  },
+  semiBoldNormal: {
+    ...textNormal,
+    fontFamily: semiBold,
+  },
+
+  body1: {
+    ...text1,
+    fontFamily: regular,
+  },
+  bold1: {
+    ...text1,
+    fontFamily: bold,
+  },
+  medium1: {
+    ...text1,
+    fontFamily: medium,
+  },
+  semiBold1: {
+    ...text1,
+    fontFamily: semiBold,
+  },
+
+  body2: {
+    ...text2,
+    fontFamily: regular,
+  },
+  bold2: {
+    ...text2,
+    fontFamily: bold,
+  },
+  medium2: {
+    ...text2,
+    fontFamily: medium,
+  },
+  semiBold2: {
+    ...text2,
+    fontFamily: semiBold,
+  },
+
+  body3: {
+    ...text3,
+    fontFamily: regular,
+  },
+  bold3: {
+    ...text3,
+    fontFamily: bold,
+  },
+  medium3: {
+    ...text3,
+    fontFamily: medium,
+  },
+  semiBold3: {
+    ...text3,
+    fontFamily: semiBold,
+  },
+
   body4: {
-    fontFamily:fontFamilyRegular,
-    fontSize: 16,
-    color: textColor,
+    ...text4,
+    fontFamily: regular,
   },
+  bold4: {
+    ...text4,
+    fontFamily: bold,
+  },
+  medium4: {
+    ...text4,
+    fontFamily: medium,
+  },
+  semiBold4: {
+    ...text4,
+    fontFamily: semiBold,
+  },
+
   body5: {
-    fontFamily:fontFamilyRegular,
-    fontSize: 12,
-    color: textColor,
+    ...text5,
+    fontFamily: regular,
+  },
+  bold5: {
+    ...text5,
+    fontFamily: bold,
+  },
+  medium5: {
+    ...text5,
+    fontFamily: medium,
+  },
+  semiBold5: {
+    ...text5,
+    fontFamily: semiBold,
   },
 };
 

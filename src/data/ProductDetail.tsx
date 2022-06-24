@@ -5,7 +5,7 @@ export interface IImage  {
   url: string
 }
 
-interface IProductDetail  {
+export interface IProductDetail  {
   images: Array<IImage>
   name: string;
   percentDiscount: number,
@@ -19,7 +19,7 @@ interface IProductDetail  {
   sizes: Array<ISizeProduct>
 };
 
-export const ProductDetail: IProductDetail = {
+export const PRODUCT_DETAIL: IProductDetail = {
   images: [
     {url: IMAGES.IMG_PRODUCT},
     {url: IMAGES.IMG_PRODUCT},

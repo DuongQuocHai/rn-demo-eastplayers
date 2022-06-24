@@ -3,7 +3,8 @@ import {StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 
 interface RowCenterProps {
   style?: StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  key?: string;
 }
 
 const RowCenter = ({style, children}: RowCenterProps) => {
