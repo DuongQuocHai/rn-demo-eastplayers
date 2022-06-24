@@ -9,6 +9,7 @@ export const COLORS = {
   GRAY_DARK_RGBA: 'rgba(15, 23, 42, 0.5)',
   GRAY_3: '#4E5369',
   GRAY_4: '#6C728B',
+  GRAY_5: '#9CA1B8',
   GRAY_6: '#D3D3E1',
   GRAY_8: '#EEEDF5',
   GRAY_9: '#F7F6FA',

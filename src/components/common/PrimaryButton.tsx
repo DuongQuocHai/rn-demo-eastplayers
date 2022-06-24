@@ -1,22 +1,36 @@
 import * as React from 'react';
-import {View, StyleSheet,Image} from 'react-native';
-import { IMAGES } from '../../assets/images';
-import { COLORS } from '../../theme/colors';
+import {
+  StyleSheet,
+  Image,
+  StyleProp,
+  ViewStyle,
+  TouchableOpacity,
+} from 'react-native';
+import {IMAGES} from '../../assets/images';
+import {COLORS} from '../../theme/colors';
 import {Text} from './Text';
 
 interface PrimaryButtonProps {
   title: string;
+  style?: StyleProp<ViewStyle> | Array<StyleProp<ViewStyle>>;
+  onPress: () => void;
 }
 
-const PrimaryButton = ({title}: PrimaryButtonProps) => {
+const PrimaryButton = ({title, style, onPress}: PrimaryButtonProps) => {
   return (
-    <View style={styles.container}>
-      <Image source={IMAGES.IC_BUTTON_LEFT} style={[styles.icButton, {left: 0}]}/>
+    <TouchableOpacity style={[styles.container, style]} onPress={onPress}>
+      <Image
+        source={IMAGES.IC_BUTTON_LEFT}
+        style={[styles.icButton, {left: 0}]}
+      />
       <Text type="headlineNormal" style={styles.title}>
         {title.toLocaleUpperCase()}
       </Text>
-      <Image source={IMAGES.IC_BUTTON_RIGHT} style={[styles.icButton, {right: 0}]}/>
-    </View>
+      <Image
+        source={IMAGES.IC_BUTTON_RIGHT}
+        style={[styles.icButton, {right: 0}]}
+      />
+    </TouchableOpacity>
   );
 };
 
@@ -34,5 +48,5 @@ const styles = StyleSheet.create({
   title: {
     color: COLORS.WHITE,
   },
-  icButton: {position: 'absolute', top: 0, bottom: 0, zIndex: -1}
+  icButton: {position: 'absolute', top: 0, bottom: 0, zIndex: -1},
 });

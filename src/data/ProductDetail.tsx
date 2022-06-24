@@ -8,8 +8,9 @@ export interface IImage  {
 interface IProductDetail  {
   images: Array<IImage>
   name: string;
-  sale: number,
+  percentDiscount: number,
   price: number,
+  rootPrice: number,
   star: number,
   countRate: number,
   countSold: number,
@@ -25,8 +26,9 @@ export const ProductDetail: IProductDetail = {
     {url: IMAGES.IMG_PRODUCT},
   ],
   name: 'Solid Pocket Button Lapel Long Sleeve Blue Cotton 100%',
-  sale: 10,
+  percentDiscount: 10,
   price: 406000,
+  rootPrice: 446600,
   star: 5,
   countRate: 996,
   countSold: 1201,
