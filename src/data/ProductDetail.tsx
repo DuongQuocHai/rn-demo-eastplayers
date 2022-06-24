@@ -1,6 +1,24 @@
 import { IMAGES } from "../assets/images";
+import { IColorProduct, ISizeProduct } from "./constant";
 
-export const ProductDetail = {
+export interface IImage  {
+  url: string
+}
+
+interface IProductDetail  {
+  images: Array<IImage>
+  name: string;
+  sale: number,
+  price: number,
+  star: number,
+  countRate: number,
+  countSold: number,
+  isFollowed: boolean,
+  colors: Array<IColorProduct>
+  sizes: Array<ISizeProduct>
+};
+
+export const ProductDetail: IProductDetail = {
   images: [
     {url: IMAGES.IMG_PRODUCT},
     {url: IMAGES.IMG_PRODUCT},
@@ -13,6 +31,6 @@ export const ProductDetail = {
   countRate: 996,
   countSold: 1201,
   isFollowed: true,
-  color: [{id: 1}, {id: 3}],
-  size: [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}],
+  colors: [{id: 1}, {id: 3}],
+  sizes: [{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}],
 };
