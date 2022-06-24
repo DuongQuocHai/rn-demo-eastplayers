@@ -33,7 +33,6 @@ const FooterButton = ({
           onPress={onPress}
         />
       </RowCenter>
-      <SafeAreaView />
     </View>
   );
 };
